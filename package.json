@@ -1,0 +1,46 @@
+{
+  "name": "@project-azimuth/shell",
+  "dependencies": {
+    "rxjs": "^6.5.2",
+    "reflect-metadata": "^0.1.13",
+    "inversify": "^5.0.1"
+  },
+  "bugs": {
+    "url": "https://github.com/ztrank/azimuth-shell/issues"
+  },
+  "version": "0.0.0",
+  "repository": {
+    "url": "https://github.com/ztrank/azimuth-shell.git",
+    "type": "git"
+  },
+  "author": "ztrank",
+  "scripts": {
+    "postversion": "git push && git push --tags",
+    "version": "git add -A src",
+    "build": "rmdir dist /s /q && tsc",
+    "test": "jest",
+    "prepublishOnly": "npm test && npm run build && npm run lint",
+    "prepare": "",
+    "lint": " tslint -p tsconfig.json",
+    "preversion": "npm test && npm run build && npm run lint"
+  },
+  "main": "dist/index.js",
+  "files": [
+    "dist/**/*"
+  ],
+  "homepage": "https://github.com/ztrank/azimuth-shell#readme",
+  "types": "dist/index.d.ts",
+  "devDependencies": {
+    "@babel/preset-typescript": "^7.3.3",
+    "@babel/core": "^7.5.5",
+    "tslint": "^5.19.0",
+    "jest": "^24.9.0",
+    "@babel/preset-env": "^7.5.5",
+    "typescript": "^3.5.3",
+    "@types/jest": "^24.0.18",
+    "@types/node": "^12.7.2",
+    "ts-jest": "^24.0.2"
+  },
+  "description": "",
+  "license": "MIT"
+}
